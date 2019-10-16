@@ -2,16 +2,22 @@ import React, { useState } from 'react';
 
 
 function App() {
-  const [{ count1, count2 }, setCount] = useState({ count1: 10, count2: 20 });
+  const [{ email }, setEmail] = useState('');
+  const [{ password }, setPassword] = useState('');
 
 
 
   return (
     <div>
-      <div>{count1}</div>
-      <button onClick={() => setCount(c => ({  ...c, count1: c.count1 +1 }))}>+</button>
-      <div>{count2}</div>
-      <button onClick={() => setCount(c => ({ ...c, count2: c.count2 +1 }))}>+</button>
+      <input 
+        name='email' 
+        value={email} 
+        onChange={e => setEmail(e.target.value)} />
+      <input 
+        type='password' 
+        name='password' 
+        value={password} 
+        onChange={e => setPassword(e.target.value)} />
     </div>
   )
 }
